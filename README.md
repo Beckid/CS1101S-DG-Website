@@ -1,6 +1,6 @@
 # NUS CS1101S Discussion Group Website
 
-__CS1101S Programming Methodology (in JavaScript)
+__CS1101S Programming Methodology (in JavaScript)<br>
 AY2017/2018 Semester 1<br>
 School of Computing<br>
 National University of Singapore__
