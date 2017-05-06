@@ -1,11 +1,11 @@
 # NUS CS1101S Discussion Group Website
 
-__CS1101S Programming Methodology (in JavaScript)<br>
+__[CS1101S Programming Methodology](https://comp.nus.edu.sg/~cs1101s/) (in JavaScript)<br>
 AY2017/2018 Semester 1<br>
-School of Computing<br>
-National University of Singapore__
+[School of Computing](https://comp.nus.edu.sg/)<br>
+[National University of Singapore](https://www.nus.edu.sg/)__
 
-### Visit this DG website at [here](https://comp.nus.edu.sg/~e0134079/cs1101s).
+### Visit this DG website at [here](https://comp.nus.edu.sg/~e0134079/cs1101s/).
 
 #### Discussion Group taught by Avenger [Niu Yunpeng](https://comp.nus.edu.sg/~e0134079/).
 
