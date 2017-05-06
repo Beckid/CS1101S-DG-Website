@@ -10,9 +10,8 @@ National University of Singapore__
 #### Discussion Group taught by Avenger [Niu Yunpeng](https://comp.nus.edu.sg/~e0134079/).
 
 ## Main Features
-1. Support file upload / delete for admin users
-2. Support file download (only after login in) for other users
-
+1. Support file upload / delete for admin users;
+2. Support file download (only after login in) for other users.
 
 ## Implementation
 PHP was adapted as the server-side language, simple HTML / CSS / JavaScript was adapted as the client-side languages, Bootstrap was adapted as the front-end framework.
