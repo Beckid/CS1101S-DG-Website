@@ -1,0 +1,6 @@
+{
+	"name": "CS1101S Discussion Group Website",
+	"description": "A PHP Website that simply supports upload and download of .pdf files",
+	"repository": "https://github.com/Beckid/CS1101S-DG-Website",
+	"addons": []
+}

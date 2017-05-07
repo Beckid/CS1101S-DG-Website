@@ -1,0 +1,12 @@
+{
+	"name":"yunpeng/cs1101s-dg-website",
+	"require":{
+	    
+	},
+	"require-dev":{
+	    "heroku/heroku-buildpack-php": "*"
+	},
+	"autoload":{
+		
+	}
+}
