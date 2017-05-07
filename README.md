@@ -31,15 +31,15 @@ CREATE TABLE Users (
     Password varchar(50) NOT NULL,
     PRIMARY KEY(Id)
 )
-```<br>
+```
 To create an admin user, please type in the following SQL command:
 ```
 INSERT INTO Users (UserType, Username, Password) VALUES (0, "Jack", "123456")
-```<br>
+```
 To create a student user (normal user), please type in the following SQL command:
 ```
 INSERT INTO Users (UserType, Username, Password) VALUES (1, "Lily", "987654")
-```<br>
+```
 
 - Create _Files_ Table<br>
 To create the table of files, please type in the following SQL command:
