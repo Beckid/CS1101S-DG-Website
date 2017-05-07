@@ -10,16 +10,46 @@
 	            <span class="icon-bar"></span>
 	        </button>
 
-			<a href="#" class="navbar-brand">CS1101S</a>
+			<a href="index.php" class="navbar-brand">CS1101S DG</a>
 		</div>
 
-		<!-- Compatibility for mobile browsers, will collapse on smaller screens -->
+		<!-- Compatibility for mobile browsers, which will collapse on smaller screens -->
 		<div class="collapse navbar-collapse" id="my-navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="https://www.ivle.nus.edu.sg/">IVLE</a></li>
-				<li><a href="https://sourceacademy.comp.nus.edu.sg/">Source Academy</a></li>
-				<li><a href="https://source-ide.surge.sh/">Source IDE</a></li>
-				<li><a href="https://comp.nus.edu.sg/~e0134079/">Yunpeng's Website</a></li>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="https://www.ivle.nus.edu.sg/" target="_blank">IVLE</a></li>
+				<li><a href="https://sourceacademy.comp.nus.edu.sg/" target="_blank">Source Academy</a></li>
+				<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE</a></li>
+				<li><a href="https://comp.nus.edu.sg/~e0134079/" target="_blank">Yunpeng's Website</a></li>
+				<?php
+				require_once 'useful.php';
+
+				if (logged_in() && isset($_SESSION['usertype']) && $_SESSION['usertype'] == "admin") {
+				?>
+				<li><a href="upload.php">Upload Files</a></li>
+				<?php
+				} ?>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<?php
+				if (logged_in()) {
+				?>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Welcome, <?php echo $_SESSION['username']; ?><b class="cavet"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="logout.php">Sign out</a></li>
+					</ul>
+				</li>
+
+				<?php
+				} else {
+				?>
+				<li><a href="login.php">Sign in</a></li>
+				<?php
+				}
+				?>
 			</ul>
 		</div>
 	</div>
