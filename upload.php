@@ -24,16 +24,22 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 		}
 	} else if ($_FILES['file']['type'] != "application/pdf") {
 		// Restrain the file type to be only .pdf files.
-		$result = 2;
+		$result = 3;
 	} else {
-		// Record that the upload is successful.
-		$result = 0;
+		// Creates a dummy default author if the author is unknown.
+		if($_POST['author'] == "") {
+			$_POST['author'] = "Admin";
+		}
 
 		// Save the file locally and keep a record in the database.
-		file_upload($_FILES['file'], $_POST['fileName'], $_POST['author'], $_POST['description']);
-
-		// Re-direct to the homepage.
-		header("location: index.php");
+		if (file_upload($_FILES['file'], $_POST['fileName'], $_POST['author'], $_POST['description'])) {
+			// Record that the upload is successful.
+			$result = 0;
+			// Re-direct to the homepage.
+			header("location: index.php");
+		} else {
+			$result = 4;
+		}
 	}
 }
 ?>
@@ -51,6 +57,8 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 					echo "Network error: The upload process has been cancelled or has not finished.";
 				} else if ($result == 3) {
 					echo "File type error: You are only allowed to upload .pdf files.";
+				}  else if ($result == 4) {
+					echo "Server error: The server storage is unavailable.";
 				} else if ($result > 0) {
 					echo "Unknown error. Please contact your Avenger.";
 				}
