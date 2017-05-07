@@ -54,4 +54,13 @@ function log_out() {
 	// Clear the data stored on the server.
 	session_destroy();
 }
+
+// To store the uploaded file locally and keep a record in the database. Used in the upload page.
+function file_upload($fileInfo, $desiredName, $author, $description) {
+	move_uploaded_file($fileInfo['tmp_name'], get_stored_path($fileInfo['name']));
+}
+
+function get_stored_path($fname) {
+	
+}
 ?>
