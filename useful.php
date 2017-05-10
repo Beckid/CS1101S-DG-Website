@@ -14,7 +14,7 @@ function login_validate($uname, $pword) {
 	$pword = htmlspecialchars($pword);
 
 	// Create connection to the database or report error.
-	$db = mysqli_connect(DB_SERVER, DB_UNAME, DB_PWORD, DB_NAME) or die("Cannot connect to the database.");
+	$db = mysqli_connect(DB_SERVER, DB_UNAME, DB_PWORD, DB_NAME) or die("Cannot connect to the database." . mysqli_connect_error($db));
 
 	// Query to the database or report error.
 	$query = "SELECT * FROM Users WHERE Username = '" . $uname . "' AND Password = '" . $pword . "'";
@@ -33,9 +33,15 @@ function login_validate($uname, $pword) {
 			$_SESSION['usertype'] = "student";
 		}
 
+		// Close the database connection.
+		mysqli_close($db);
+
 		// Return true and re-direct to the homepage.
 		return true;
 	} else {
+		// Close the database connection.
+		mysqli_close($db);
+
 		// The validation fails. Return false and prompt false information on the page.
 		return false;
 	}
@@ -73,9 +79,15 @@ function file_upload($fileInfo, $desiredName, $author, $description) {
 		$query = "INSERT INTO Files (FileName, Author, Description, FilePath) VALUES ('" . $desiredName . "', '" . $author . "', '" . $description . "', '" . $path . "')";
 		$result = mysqli_query($db, $query) or die ("Query is not successfuly.");
 
+		// Close the database connection.
+		mysqli_close($db);
+
 		// Successful in storing the file on the server.
 		return true;
 	} else {
+		// Close the database connection.
+		mysqli_close($db);
+
 		// Not successful in storing the file on the server.
 		return false;
 	}
@@ -107,7 +119,17 @@ function get_all_files() {
 	$result = mysqli_query($db, $query) or die ("Query is not successfuly.");
 
 	// Get the 2nd-dimensional associate array for all the files. Each row represents a single file.
-	$result_rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	// $result_rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	// Bug fixed, some verions of PHP do not support mysqli_fetch_all, we have to get rid of it by using a for loop.
+	$result_rows = array();
+	for ($i = 0; $i < mysqli_num_rows($result); $i++) { 
+		$result_rows[$i] = mysqli_fetch_assoc($result);
+	}
+
+
+	// Close the database connection.
+	mysqli_close($db);
 
 	return $result_rows;
 }
@@ -126,6 +148,9 @@ function file_download($id) {
 		$result_row = mysqli_fetch_assoc($result);
 		$path = $result_row['FilePath'];
 		$fname = $result_row['FileName'] . ".pdf";
+
+		// Close the database connection.
+		mysqli_close($db);
 
 		if(!$path) {
 			die("The file does not exist on the server.");
