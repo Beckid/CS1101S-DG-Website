@@ -30,15 +30,15 @@ CREATE TABLE Users (
     Username varchar(50) NOT NULL,
     Password varchar(50) NOT NULL,
     PRIMARY KEY(Id)
-)
+);
 ```
 To create an admin user, please type in the following SQL command:
 ```
-INSERT INTO Users (UserType, Username, Password) VALUES (0, "Jack", "123456")
+INSERT INTO Users (UserType, Username, Password) VALUES (0, "Jack", "123456");
 ```
 To create a student user (normal user), please type in the following SQL command:
 ```
-INSERT INTO Users (UserType, Username, Password) VALUES (1, "Lily", "987654")
+INSERT INTO Users (UserType, Username, Password) VALUES (1, "Lily", "987654");
 ```
 
 - Create _Files_ Table<br>
@@ -52,7 +52,7 @@ CREATE TABLE Files (
     Description varchar(500),
     FilePath varchar(200) NOT NULL,
     PRIMARY KEY(Id)
-)
+);
 ```
 
 ## Notice
