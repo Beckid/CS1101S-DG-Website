@@ -5,7 +5,7 @@ AY2017/2018 Semester 1<br>
 [School of Computing](https://comp.nus.edu.sg/)<br>
 [National University of Singapore](https://www.nus.edu.sg/)__
 
-### Visit this DG website at [here](https://comp.nus.edu.sg/~e0134079/cs1101s/).
+### Visit this DG website at [here](https://cs1101s-dg.hol.es/).
 
 #### Discussion Group taught by Avenger [Niu Yunpeng](https://comp.nus.edu.sg/~e0134079/).
 
