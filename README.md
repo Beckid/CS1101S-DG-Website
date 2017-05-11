@@ -19,7 +19,8 @@ PHP was adapted as the server-side language, simple HTML / CSS / JavaScript was 
 ## How to Use
 ### Set-up of Database
 - Overview<br>
-We need two tables in a single database. Below, assume that we have created the database called 'cs1101s'.
+We need two tables in a single database. Below, assume that we have created the database called 'cs1101s'.<br>
+Therefore, you need to change the connection variables in config.php
 - Create _Users_ Table<br>
 To create the table of users, please type in the following SQL command:
 ```
