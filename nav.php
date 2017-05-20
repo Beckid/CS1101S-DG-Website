@@ -16,7 +16,7 @@
 		<!-- Compatibility for mobile browsers, which will collapse on smaller screens -->
 		<div class="collapse navbar-collapse" id="my-navbar-collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="https://www.ivle.nus.edu.sg/" target="_blank">IVLE</a></li>
+				<li><a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a></li>
 				<li><a href="https://sourceacademy.comp.nus.edu.sg/" target="_blank">Source Academy</a></li>
 				<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE</a></li>
 				<li><a href="https://comp.nus.edu.sg/~e0134079/" target="_blank">Yunpeng's Website</a></li>
@@ -26,6 +26,7 @@
 				if (logged_in() && isset($_SESSION['usertype']) && $_SESSION['usertype'] == "admin") {
 				?>
 				<li><a href="upload.php">Upload Files</a></li>
+				<li><a href="delete.php">Delete Files</a></li>
 				<?php
 				} ?>
 			</ul>
@@ -54,5 +55,5 @@
 		</div>
 	</div>
 </nav>
-<!-- Because the navigation bar is fixed at the top, we need 3 new lines to avoid being blocked by it. -->
+<!-- Because the navigation bar is fixed at the top, we need 3 new lines to avoid the contents below being blocked by it. -->
 <br><br><br>

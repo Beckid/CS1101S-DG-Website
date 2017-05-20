@@ -6,3 +6,8 @@ function fill_download_form(id) {
 	// This return statement is important, so as to avoid the href attribute from being executed.
 	return false;
 }
+
+// This function is used to add the alert class so as to highlight the error information (if any).
+function add_alert_class() {
+	$("#error_message").addClass("alert alert-danger alert-dismissable");
+}

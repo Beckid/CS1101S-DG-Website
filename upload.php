@@ -3,6 +3,7 @@
 <html>
 <head>
 	<?php require_once 'head.php'; ?>
+	<script type="text/javascript" src="useful.js"></script>
 </head>
 <body>
 <?php
@@ -45,12 +46,19 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 ?>
 
 <h1>Upload Files<small> (For Admin only)</small></h1>
+<br><br>
 
 <div class="container">
-	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offse-2 col-lg-8 col-lg-offset-2">
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
 		<form role="form" method="post" action="upload.php" enctype="multipart/form-data">
-			<p style="color: red;">
+			<div id="error_message" class="">
 				<?php
+				if ($result > 0) {
+				?>
+				<script type="text/javascript">add_alert_class();</script>
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<?php
+				}
 				if ($result == 1) {
 					echo "File size error: You are only allowed to upload files not larger than 5MB.";
 				} else if ($result == 2) {
@@ -63,7 +71,8 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 					echo "Unknown error. Please contact your Avenger.";
 				}
 				?>
-			</p>
+			</div>
+			<br>
 
 			<!-- Define the maximum file size here, a little bit smaller than 5MB (which is 5242880). -->
 			<input type="hidden" name="MAX_FILE_SIZE" value="5242800">
