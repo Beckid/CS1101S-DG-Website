@@ -174,4 +174,32 @@ function file_download($id) {
 		}
 	}
 }
+
+// Delete a single file
+function file_delete($id) {
+	// Create connection to the database or report error.
+	$db = mysqli_connect(DB_SERVER, DB_UNAME, DB_PWORD, DB_NAME) or die("Cannot connect to the database.");
+
+	// Avoid SQL injection by filtering special characters.
+	$id = htmlspecialchars($id);
+
+	// Query to the database to get the file path.
+	$query = "SELECT * FROM Files LIMIT 1 OFFSET " . $id;
+	$result = mysqli_query($db, $query) or die ("Query is not successfuly.");
+
+	// To verify the record exists in the database.
+	if (mysqli_num_rows($result) == 1) {
+		// Change the query result into an associate array.
+		$result_row = mysqli_fetch_assoc($result);
+
+		// Tries to delete this row from the database.
+		$query = "DELETE FROM Files WHERE Id = " . $result_row['Id'];
+		mysqli_query($db, $query) or die ("Query is not successfuly.");
+	} else {
+		return false;
+	}
+
+	// Notice that we do not delete the file locally.
+	return true;
+}
 ?>

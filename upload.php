@@ -8,6 +8,8 @@
 <body>
 <?php
 require_once 'nav.php';
+
+// To represent the type of the error.
 $result = -1;
 
 // Only admin users can upload files.
@@ -58,17 +60,17 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 				<script type="text/javascript">add_alert_class();</script>
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<?php
-				}
-				if ($result == 1) {
-					echo "File size error: You are only allowed to upload files not larger than 5MB.";
-				} else if ($result == 2) {
-					echo "Network error: The upload process has been cancelled or has not finished.";
-				} else if ($result == 3) {
-					echo "File type error: You are only allowed to upload .pdf files.";
-				}  else if ($result == 4) {
-					echo "Server error: The server storage is unavailable.";
-				} else if ($result > 0) {
-					echo "Unknown error. Please contact your Avenger.";
+					if ($result == 1) {
+						echo "File size error: You are only allowed to upload files not larger than 5MB.";
+					} else if ($result == 2) {
+						echo "Network error: The upload process has been cancelled or has not finished.";
+					} else if ($result == 3) {
+						echo "File type error: You are only allowed to upload .pdf files.";
+					}  else if ($result == 4) {
+						echo "Server error: The server storage is unavailable.";
+					} else {
+						echo "Unknown error: Please contact the system admin.";
+					}
 				}
 				?>
 			</div>

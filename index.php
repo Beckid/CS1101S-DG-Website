@@ -44,7 +44,7 @@ if (!logged_in()) {
 		</thead>
 		<?php
 		$all_files = get_all_files();
-		for ($i=0; $i < count($all_files); $i++) {
+		for ($i = 0; $i < count($all_files); $i++) {
 			$saveAsName = $all_files[$i]['Filename'] . ".pdf";
 		?>
 		<tr>
