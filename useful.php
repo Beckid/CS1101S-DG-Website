@@ -17,34 +17,36 @@ function login_validate($uname, $pword) {
 	$db = mysqli_connect(DB_SERVER, DB_UNAME, DB_PWORD, DB_NAME) or die("Cannot connect to the database." . mysqli_connect_error($db));
 
 	// Query to the database or report error.
-	$query = "SELECT * FROM Users WHERE Username = '" . $uname . "' AND Password = '" . $pword . "'";
+	$query = "SELECT * FROM Users WHERE Username = '" . $uname . "'";
 	$result = mysqli_query($db, $query) or die ("Query is not successfuly.");
 
 	if (mysqli_num_rows($result) > 0) {
-		// The validation is successful. Change the query result into an associate array.
+		// There exists a user with this username in the database.
 		$result_row = mysqli_fetch_assoc($result);
 
-		// Register this dialog in the _SESSION to save related information.
-		$_SESSION['authorized'] = true;
-		$_SESSION['username'] = $result_row['Username'];
-		if ($result_row['UserType'] == 0) {
-			$_SESSION['usertype'] = "admin";
-		} elseif ($result_row['UserType'] == 1) {
-			$_SESSION['usertype'] = "student";
+		// To check whether the password matches with this username.
+		// PHP secured password verify function is used (single-way hashed with bcrypt algorithm).
+		if (password_verify($pword, $result_row['Password'])) {
+			// Register this dialog in the _SESSION to save related information.
+			$_SESSION['authorized'] = true;
+			$_SESSION['username'] = $result_row['Username'];
+			if ($result_row['UserType'] == 0) {
+				$_SESSION['usertype'] = "admin";
+			} elseif ($result_row['UserType'] == 1) {
+				$_SESSION['usertype'] = "student";
+			}
+
+			// Close the database connection.
+			mysqli_close($db);
+			// Return true and re-direct to the homepage.
+			return true;
 		}
-
-		// Close the database connection.
-		mysqli_close($db);
-
-		// Return true and re-direct to the homepage.
-		return true;
-	} else {
-		// Close the database connection.
-		mysqli_close($db);
-
-		// The validation fails. Return false and prompt false information on the page.
-		return false;
 	}
+
+	// Close the database connection.
+	mysqli_close($db);
+	// The validation fails. Return false and prompt false information on the page.
+	return false;
 }
 
 // Clear all the _SESSION variables. Used in the logout page.
