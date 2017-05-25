@@ -29,7 +29,7 @@ CREATE TABLE Users (
     CreateTime TIMESTAMP,
     UserType int NOT NULL,
     Username varchar(50) NOT NULL,
-    Password varchar(50) NOT NULL,
+    Password varchar(80) NOT NULL,
     PRIMARY KEY(Id)
 );
 ```
