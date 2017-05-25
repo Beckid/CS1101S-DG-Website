@@ -45,14 +45,14 @@ if (!logged_in()) {
 		<?php
 		$all_files = get_all_files();
 		for ($i = 0; $i < count($all_files); $i++) {
-			$saveAsName = $all_files[$i]['Filename'] . ".pdf";
+			$saveAsName = $all_files[$i]['file_name'] . ".pdf";
 		?>
 		<tr>
-			<td><?php echo $all_files[$i]['Filename']; ?></td>
-			<td><?php echo $all_files[$i]['Author']; ?></td>
-			<td><?php echo $all_files[$i]['UploadTime']; ?></td>
-			<td><?php echo $all_files[$i]['Description']; ?></td>
-			<td><a href="javascript:void(0);" download="<?php echo $saveAsName; ?>" onclick="fill_download_form(<?php echo $all_files[$i]['Id']; ?>);">Click here</a></td>
+			<td><?php echo $all_files[$i]['file_name']; ?></td>
+			<td><?php echo $all_files[$i]['author']; ?></td>
+			<td><?php echo $all_files[$i]['uploaded_at']; ?></td>
+			<td><?php echo $all_files[$i]['description']; ?></td>
+			<td><a href="javascript:void(0);" download="<?php echo $saveAsName; ?>" onclick="fill_download_form(<?php echo $all_files[$i]['id']; ?>);">Click here</a></td>
 		</tr>
 		<?php
 		}

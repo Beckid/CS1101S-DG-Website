@@ -3,6 +3,7 @@
 <html>
 <head>
 	<?php require_once 'head.php'; ?>
+	<script type="text/javascript" src="useful.js"></script>
 </head>
 <body>
 <?php
@@ -25,13 +26,17 @@ if (logged_in()) {
 <h1>User Login</h1>
 
 <div class="container">
-	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offse-4 col-lg-4 col-lg-offset-4">
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
 		<form role="form" method="post" action="login.php">
-			<p style="color: red;">
+			<div id="error_message" class="">
 				<?php if ($login_fail) {
 					echo "The username and password does not match.";
+				?>
+				<script type="text/javascript">add_alert_class();</script>
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<?php
 				} ?>
-			</p>
+			</div>
 
 			<div class="form-group">
 				<label for="username">Username</label>

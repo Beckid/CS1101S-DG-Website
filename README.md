@@ -17,10 +17,14 @@ AY2017/2018 Semester 1<br>
 PHP was adapted as the server-side language, simple HTML / CSS / JavaScript was adapted as the client-side languages, Bootstrap was adapted as the front-end framework.
 
 ## How to Use
-### Set-up of Database
+- Notice that in the latest release, we have switched from mySQLi to PDO (PHP Database Object). That means we have adapted to the OOP style rather than procedural style. Also, this provides a unified interface in case that users may be using different database, like mySQL, PostGreSQL, etc.
+- In the future, there are two important updates: 1) Update from PHP 5.6 to PHP 7; 2) Fully adapt OOP style programming.
+
+### Set-up of Database (using mySQL)
 - Overview<br>
 We need two tables in a single database. Below, assume that we have created the database called 'cs1101s'.<br>
 Therefore, you need to change the connection variables in config.php
+
 - Create _users_ Table<br>
 To create the table of users, please type in the following SQL command:
 ```
@@ -35,11 +39,11 @@ CREATE TABLE users (
 ```
 To create an admin user, please type in the following SQL command:
 ```
-INSERT INTO Users (UserType, Username, Password) VALUES (0, "Jack", "123456");
+INSERT INTO users (user_type, username, password) VALUES (0, "Jack", "123456");
 ```
 To create a student user (normal user), please type in the following SQL command:
 ```
-INSERT INTO Users (UserType, Username, Password) VALUES (1, "Lily", "987654");
+INSERT INTO Users (user_type, username, password) VALUES (1, "Lily", "987654");
 ```
 
 - Create _files_ Table<br>

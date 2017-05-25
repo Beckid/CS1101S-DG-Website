@@ -85,10 +85,10 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 			for ($i = 0; $i < count($all_files); $i++) {
 			?>
 			<tr>
-				<td><?php echo $all_files[$i]['Filename']; ?></td>
-				<td><?php echo $all_files[$i]['Author']; ?></td>
-				<td><?php echo $all_files[$i]['UploadTime']; ?></td>
-				<td><?php echo $all_files[$i]['Description']; ?></td>
+				<td><?php echo $all_files[$i]['file_name']; ?></td>
+				<td><?php echo $all_files[$i]['author']; ?></td>
+				<td><?php echo $all_files[$i]['uploaded_at']; ?></td>
+				<td><?php echo $all_files[$i]['description']; ?></td>
 				<td><input type="checkbox" name="select_file[]" value="<?php echo $i; ?>" onchange="get_selected_file_name();"></td>
 			</tr>
 			<?php
