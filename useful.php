@@ -225,11 +225,15 @@ function file_delete($id) {
 	// Create connection to the database or report error.
 	$db = db_connect();
 
+	// Notice that there is a known bug that LIMIT and OFFSET only accepts integer parameter.
+	// What we can do is to turn off emulated prepared statement.
+	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
 	$stmt = $db->prepare("SELECT * FROM " . DB_NAME . ".files LIMIT 1 OFFSET ?");
 
 	// Query to the database or report error.
 	try {
+		// Since we have already binded the parameter, there is no need to put any parameters here.
 		$stmt->execute(array($id));
 	} catch (PDOException $e) {
 		// Catch the potential exception here for defensive programming practice.

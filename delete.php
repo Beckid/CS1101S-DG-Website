@@ -30,8 +30,6 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 		} else {
 			// Record that the delete is successful.
 			$result = 0;
-			// Re-direct to the homepage.
-			// header("location: index.php");
 		}
 	}
 }
