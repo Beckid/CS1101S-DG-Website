@@ -232,7 +232,7 @@ function file_delete($id) {
 	// What we can do is to turn off emulated prepared statement.
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
-	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".files LIMIT 1 OFFSET ?");
+	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".files ORDER BY id OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY");
 
 	// Query to the database or report error.
 	try {
