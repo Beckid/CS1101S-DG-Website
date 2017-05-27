@@ -60,7 +60,7 @@ CREATE TABLE files (
 );
 ```
 
-### Set-up of Database (using Microsoft SQL)
+### Set-up of Database (using Microsoft SQL Server)
 - Overview<br>
 We need two tables in a single database. Below, assume that we have created the database called 'cs1101s'.<br>
 Therefore, you need to change the connection variables in config.php
