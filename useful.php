@@ -161,10 +161,7 @@ function get_all_files() {
 	}
 
 	// Use a 2D array to fetch each row in the files table.
-	$result_rows = array();
-	for ($i = 0; $i < $stmt->rowCount(); $i++) { 
-		$result_rows[$i] = $stmt->fetch(PDO::FETCH_ASSOC);
-	}
+	$result_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	// Close the database connection.
 	$db = null;
@@ -187,9 +184,10 @@ function file_download($id) {
 		die("Cannot query to the database. ". $e->getMessage() . "<br>");
 	}
 
-	if ($stmt->rowCount() > 0) {
-		// hange the query result into an associate array and get the file path.
-		$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
+	// Fetch the query result into an associate array and get the file path.
+	$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	if ($result_row != null) {
 		$path = $result_row['file_path'];
 		$fname = $result_row['file_name'] . ".pdf";
 
@@ -216,6 +214,11 @@ function file_download($id) {
 
 			return true;
 		}
+	} else {
+		// Close the database connection.
+		$db = null;
+		// Return false because we cannot download the selected file.
+		return false;
 	}
 }
 
@@ -242,11 +245,11 @@ function file_delete($id) {
 		die("Cannot query to the database. ". $e->getMessage() . "<br>");
 	}
 
-	// To verify the record exists in the database.
-	if ($stmt->rowCount() == 1) {
-		// Change the query result into an associate array.
-		$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
+	// Change the query result into an associate array.
+	$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	// To verify the record exists in the database.
+	if ($result_row != null) {
 		// Prepared statement for query to the database later (to avoid SQL injection attack).
 		$stmt = $db->prepare("DELETE FROM " . DB_PREFIX . ".files WHERE id = ?");
 		// Query to the database or report error.
@@ -256,14 +259,16 @@ function file_delete($id) {
 			// Catch the potential exception here for defensive programming practice.
 			die("Cannot query to the database. ". $e->getMessage() . "<br>");
 		}
+
+		// Close the database connection.
+		$db = null;
+		// Notice that we do not delete the file locally.
+		return true;
 	} else {
+		// Close the database connection.
+		$db = null;
+		// Return false because we cannot find the requested file.
 		return false;
 	}
-
-	// Close the database connection.
-	$db = null;	
-
-	// Notice that we do not delete the file locally.
-	return true;
 }
 ?>
