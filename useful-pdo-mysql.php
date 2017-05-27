@@ -31,7 +31,7 @@ function login_validate($uname, $pword) {
 	$db = db_connect();
 
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
-	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".users WHERE username = ?");
+	$stmt = $db->prepare("SELECT * FROM " . DB_NAME . ".users WHERE username = ?");
 	// Query to the database or report error.
 	try {
 		$stmt->execute(array($uname));
@@ -40,12 +40,10 @@ function login_validate($uname, $pword) {
 		die("Cannot query to the database. ". $e->getMessage() . "<br>");
 	}
 
-	// Fetch the first row returned by the statement to an associate array.
-	// Avoid using $stmt->rowCount() here due to known compatibility issues.
-	$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
+	if ($stmt->rowCount() > 0) {
+		// There exists a user with this username in the database.
+		$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	// There exists at least one row matching the username in the database.
-	if ($result_row != null) {
 		// To check whether the password matches with this username.
 		// PHP secured password verify function is used (single-way hashed with bCrypt algorithm).
 		if (password_verify($pword, $result_row['password'])) {
@@ -103,7 +101,7 @@ function file_upload($fileInfo, $desiredName, $author, $description) {
 		$db = db_connect();
 
 		// Prepared statement for query to the database later (to avoid SQL injection attack).
-		$stmt = $db->prepare("INSERT INTO " . DB_PREFIX . ".files (file_name, author, description, file_path) VALUES (?, ?, ?, ?)");
+		$stmt = $db->prepare("INSERT INTO " . DB_NAME . ".files (file_name, author, description, file_path) VALUES (?, ?, ?, ?)");
 
 		// Query to the database or report error.
 		try {
@@ -151,7 +149,7 @@ function get_all_files() {
 	$db = db_connect();
 
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
-	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".files ORDER BY uploaded_at DESC");
+	$stmt = $db->prepare("SELECT * FROM " . DB_NAME . ".files ORDER BY uploaded_at DESC");
 	// Query to the database or report error.
 	try {
 		$stmt->execute();
@@ -178,7 +176,7 @@ function file_download($id) {
 	$db = db_connect();
 
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
-	$stmt = $db->prepare("SELECT file_path, file_name FROM " . DB_PREFIX . ".files WHERE id = ?");
+	$stmt = $db->prepare("SELECT file_path, file_name FROM " . DB_NAME . ".files WHERE id = ?");
 	// Query to the database or report error.
 	try {
 		$stmt->execute(array($id));
@@ -231,7 +229,7 @@ function file_delete($id) {
 	// What we can do is to turn off emulated prepared statement.
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
-	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".files LIMIT 1 OFFSET ?");
+	$stmt = $db->prepare("SELECT * FROM " . DB_NAME . ".files LIMIT 1 OFFSET ?");
 
 	// Query to the database or report error.
 	try {
@@ -248,7 +246,7 @@ function file_delete($id) {
 		$result_row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		// Prepared statement for query to the database later (to avoid SQL injection attack).
-		$stmt = $db->prepare("DELETE FROM " . DB_PREFIX . ".files WHERE id = ?");
+		$stmt = $db->prepare("DELETE FROM " . DB_NAME . ".files WHERE id = ?");
 		// Query to the database or report error.
 		try {
 			$stmt->execute(array($result_row['id']));

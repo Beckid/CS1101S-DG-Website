@@ -15,9 +15,15 @@ $login_fail = false;
 if (logged_in()) {
 	header("location: index.php");
 } else if ($_POST) {
-	if (login_validate($_POST["username"], $_POST["password"])) {
+	// Do not allow login with empty username or password.
+	if ($_POST["username"] == "" || $_POST["password"] == "") {
+		$login_fail = true;
+	} else if (login_validate($_POST["username"], $_POST["password"])) {
+		// Checks with the database for login validation.
+		$login_fail = false;
 		header("location: index.php");
 	} else {
+		// Login validation fails.
 		$login_fail = true;
 	}
 };

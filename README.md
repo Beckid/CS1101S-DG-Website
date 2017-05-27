@@ -43,7 +43,7 @@ INSERT INTO users (user_type, username, password) VALUES (0, "Jack", "123456");
 ```
 To create a student user (normal user), please type in the following SQL command:
 ```
-INSERT INTO Users (user_type, username, password) VALUES (1, "Lily", "987654");
+INSERT INTO users (user_type, username, password) VALUES (1, "Lily", "987654");
 ```
 
 - Create _files_ Table<br>
@@ -70,7 +70,7 @@ To create the table of users, please type in the following SQL command:
 ```
 CREATE TABLE users (
     id int IDENTITY(1, 1) NOT NULL,
-    created_at TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_type int NOT NULL,
     username varchar(50) NOT NULL,
     password varchar(80) NOT NULL,
@@ -79,11 +79,11 @@ CREATE TABLE users (
 ```
 To create an admin user, please type in the following SQL command:
 ```
-INSERT INTO users (user_type, username, password) VALUES (0, "Jack", "123456");
+INSERT INTO dbo.users ([user_type], [username], [password]) VALUES (0, 'Jack', '123456');
 ```
 To create a student user (normal user), please type in the following SQL command:
 ```
-INSERT INTO Users (user_type, username, password) VALUES (1, "Lily", "987654");
+INSERT INTO dbo.users ([user_type], [username], [password]) VALUES (1, 'Lily', '987654');
 ```
 
 - Create _files_ Table<br>
@@ -91,7 +91,7 @@ To create the table of files, please type in the following SQL command:
 ```
 CREATE TABLE files (
     id int IDENTITY(1, 1) NOT NULL,
-    uploaded_at TIMESTAMP,
+    uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     file_name varchar(100) NOT NULL,
     author varchar(100),
     description varchar(500),
