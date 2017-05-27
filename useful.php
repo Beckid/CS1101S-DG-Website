@@ -115,13 +115,11 @@ function file_upload($fileInfo, $desiredName, $author, $description) {
 
 		// Close the database connection.
 		$db = null;
-
 		// Successful in storing the file on the server.
 		return true;
 	} else {
 		// Close the database connection.
 		$db = null;
-
 		// Not successful in storing the file on the server.
 		return false;
 	}
@@ -165,7 +163,7 @@ function get_all_files() {
 
 	// Close the database connection.
 	$db = null;
-
+	// Returns the information for each file to the page.
 	return $result_rows;
 }
 
