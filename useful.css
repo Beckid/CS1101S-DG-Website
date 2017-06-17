@@ -1,0 +1,11 @@
+#editor {
+    margin: 0;
+    position: absolute;
+    width: 600px;
+    height: 90%;
+}
+
+#setting_panel {
+	position: absolute;
+	left: 620px;
+}
