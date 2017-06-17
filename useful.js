@@ -51,3 +51,22 @@ function verify_name() {
 		$("#confirm_submit").attr('disabled', 'disabled');
 	}
 }
+
+// Set the default configuration for Ace Editor.
+function init_editor() {
+	// Bind the editor to the textarea.
+    var editor = ace.edit("editor");
+
+    // Set the theme of the editor.
+    editor.setTheme("ace/theme/chrome");
+
+    // Set the default language for the editor.
+    editor.session.setMode("ace/mode/javascript");
+
+    // Enable extra options for the editor: auto-complete and snippets.
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: false,
+        enableLiveAutocompletion: true
+    });
+}

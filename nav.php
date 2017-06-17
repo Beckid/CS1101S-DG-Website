@@ -7,7 +7,6 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
 	        </button>
 
 			<a href="index.php" class="navbar-brand">CS1101S DG</a>
@@ -20,6 +19,7 @@
 				<li><a href="https://sourceacademy.comp.nus.edu.sg/" target="_blank">Source Academy</a></li>
 				<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE</a></li>
 				<li><a href="https://comp.nus.edu.sg/~e0134079/" target="_blank">Yunpeng's Website</a></li>
+				<li><a href="editor.php">Online Text Editor</a></li>
 				<?php
 				require_once 'useful.php';
 
