@@ -127,6 +127,24 @@
 				<option value="4" selected>4</option>
 			</select>
 		</div>
+
+		<div class="btn-toolbar" role="toolbar" aria-label="Tools for text editor">
+			<button type="button" class="btn btn-success" aria-label="Evaluate the code in the editor">
+				<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+			</button>
+
+			<button type="button" class="btn btn-primary" aria-label="Upload code">
+				<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+			</button>
+
+			<button type="button" class="btn btn-warning" aria-label="Download code">
+				<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+			</button>
+
+			<button type="button" class="btn btn-info" aria-label="Clear the code in the editor">
+				<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+			</button>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
