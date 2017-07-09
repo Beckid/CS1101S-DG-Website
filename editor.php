@@ -6,7 +6,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" integrity="sha256-xrr4HH5eSY+cFz4SH7ja/LaAi9qcEdjMpeMP49/iOLs=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" integrity="sha256-VXy+5X0l6hcmHLjFjR2k2jyrxSd7Ag0EBUn7LUIo9Es=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/theme-chrome.js" integrity="sha256-2jUy9rC6tFAo+szqQ4aLVd5dyICBOH+FBV8CUU8VyZs=" crossorigin="anonymous"></script>
-	<script src="useful.js" type="text/javascript"></script>
+	<script src="editor.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="useful.css">
 </head>
 <body>
@@ -141,7 +141,7 @@
 				<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 			</button>
 
-			<button type="button" class="btn btn-info" aria-label="Clear the code in the editor">
+			<button type="button" class="btn btn-info" aria-label="Clear the code in the editor" onclick="empty_content();">
 				<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
 			</button>
 		</div>
