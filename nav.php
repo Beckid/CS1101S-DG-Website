@@ -40,6 +40,7 @@
 						Welcome, <?php echo $_SESSION['username']; ?><b class="cavet"></b>
 					</a>
 					<ul class="dropdown-menu">
+						<li><a href="change_password.php">Change password</a></li>
 						<li><a href="logout.php">Sign out</a></li>
 					</ul>
 				</li>
