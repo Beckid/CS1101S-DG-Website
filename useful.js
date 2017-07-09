@@ -107,3 +107,7 @@ function editor_set_tab_size() {
 
 	ace_editor.session.setTabSize(selected_tab_size);
 }
+
+function empty_content() {
+	
+}
