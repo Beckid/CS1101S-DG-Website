@@ -1,12 +1,13 @@
 <?php
-// Load the database configuration.
+// To load the database configuration.
 require_once 'config.php';
 
-// Checks the _SESSION variable to decide whether the user has logged in.
+// To check the _SESSION variable to decide whether the user has logged in.
 function logged_in() {
 	return isset($_SESSION['authorized']) && $_SESSION['authorized'] == true;
 }
 
+// Helper function to establish connection to the database.
 function db_connect() {
 	// To establish connection to the database.
 	try {
@@ -86,6 +87,15 @@ function log_out() {
 	// Clear the data stored on the server.
 	session_destroy();
 }
+
+// To verify whether the user can change the password.
+function change_password($old, $new) {
+
+}
+
+/*********************************************************************
+Functions below are used for file management functionality.
+*********************************************************************/
 
 // To store the uploaded file locally and keep a record in the database. Used in the upload page.
 function file_upload($fileInfo, $desiredName, $author, $description) {

@@ -1,6 +1,3 @@
-/*********************************************************************
-Functions below are used by Ace Editor setting.
-*********************************************************************/
 // Needs to set this variable as global.
 var ace_editor;
 
