@@ -21,7 +21,7 @@ if (!logged_in()) {
 	if ($new != $confirm) {
 		$change_result = 1;
 	} else {
-		$change_result = 2;
+		$change_result = change_password($old, $new);
 	}
 };
 ?>
@@ -41,8 +41,8 @@ if (!logged_in()) {
 				} else if ($change_result > 0) {
 					if ($change_result == 1) {
 						echo "The new password doesn't match the confirmation.";
-					} else {
-
+					} else if ($change_result == 2) {
+						echo "You have entered a wrong old password. Please check again.";
 					}
 				?>
 				<script type="text/javascript">add_alert_class();</script>

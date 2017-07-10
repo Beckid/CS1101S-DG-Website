@@ -32,7 +32,7 @@ CREATE TABLE users (
     id int AUTO_INCREMENT,
     created_at TIMESTAMP,
     user_type int NOT NULL,
-    username varchar(50) NOT NULL,
+    username varchar(50) UNIQUE NOT NULL,
     password varchar(80) NOT NULL,
     PRIMARY KEY(Id)
 );

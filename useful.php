@@ -58,7 +58,7 @@ function login_validate($uname, $pword) {
 			// Differentiate the user type to decide whether the user can upload/delete files.
 			if ($result_row['user_type'] == 0) {
 				$_SESSION['usertype'] = "admin";
-			} elseif ($result_row['UserType'] == 1) {
+			} elseif ($result_row['user_type'] == 1) {
 				$_SESSION['usertype'] = "student";
 			}
 
@@ -91,7 +91,43 @@ function log_out() {
 
 // To verify whether the user can change the password.
 function change_password($old, $new) {
+	// Avoid SQL injection by filtering special characters.
+	$uname = $_SESSION['username'];
+	$old = htmlspecialchars($old);
+	$new = htmlspecialchars($new);
 
+	// Check whether the user has entered the correct old password by trying to sign in.
+	if (login_validate($uname, $old)) {
+		// Use PHP standard encrypted single-way hash function to encrypt the password.
+		// Notice: we should never store the actual password in the database.
+		// PASSWORD_DEFAULT means the default encryption algorithm, Bcrypt.
+		$encrypted = password_hash($new, PASSWORD_DEFAULT);
+
+		// Create connection to the database or report error.
+		$db = db_connect();
+
+		// Prepared statement for query to the database later (to avoid SQL injection attack).
+		$stmt = $db->prepare("UPDATE " . DB_PREFIX . ".users SET password = ? WHERE username = ?");
+		// Query to the database or report error.
+		try {
+			$stmt->execute(array($encrypted, $uname));
+		} catch (PDOException $e) {
+			// Catch the potential exception here for defensive programming practice.
+			die("Cannot query to the database. ". $e->getMessage() . "<br>");
+		}
+
+		// Close the database connection.
+		$db = null;
+
+		// The password has been changed successfully.
+		return 0;
+	} else {
+		// Close the database connection.
+		$db = null;
+
+		// The old password is wrong.
+		return 2;
+	}
 }
 
 /*********************************************************************
