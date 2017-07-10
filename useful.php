@@ -1,4 +1,3 @@
-Hello, what are looking for here?
 <?php
 // To load the database configuration.
 require_once 'config.php';
