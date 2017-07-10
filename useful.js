@@ -51,3 +51,10 @@ function verify_name() {
 		$("#confirm_submit").attr('disabled', 'disabled');
 	}
 }
+
+// This function prompts a confirm window when the admin tries to create new users.
+function confirm_new_user() {
+	var user_name = $("#username").val();
+
+	confirm("You are going to create a new user with the username \"" + user_name + "\". Are you sure to do so?");
+}

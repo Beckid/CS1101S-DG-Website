@@ -73,7 +73,7 @@ if (!logged_in()) {
 
 			<div class="form-group">
 				<button type="submit" class="btn btn-success">Submit</button>
-				<button type="button" class="btn btn-primary">Cancel</button>
+				<button type="button" class="btn btn-primary" onclick="window.location.href='index.php'">Cancel</button>
 			</div>
 		</form>
 	</div>

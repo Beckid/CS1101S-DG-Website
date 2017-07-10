@@ -27,6 +27,7 @@
 				?>
 				<li><a href="upload.php">Upload Files</a></li>
 				<li><a href="delete.php">Delete Files</a></li>
+				<li><a href="create_user.php">Create User</a></li>
 				<?php
 				} ?>
 			</ul>
