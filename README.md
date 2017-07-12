@@ -104,5 +104,8 @@ CREATE TABLE files (
 - Change the file name of "config.example.php" into "config.php"
 - Change the default username and password.
 
+## About maximum file size
+- Open your php.ini, change the value of upload_max_filesize (the default value is 2M, recommend to set it to be 5M).
+
 ## Notice
 This project is under [GNU Public License (GPL) 3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
