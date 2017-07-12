@@ -100,5 +100,9 @@ CREATE TABLE files (
 );
 ```
 
+## Configuration of database connection
+- Change the file name of "config.example.php" into "config.php"
+- Change the default username and password.
+
 ## Notice
 This project is under [GNU Public License (GPL) 3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
