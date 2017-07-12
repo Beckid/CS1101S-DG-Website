@@ -39,12 +39,16 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 			<div class="form-group">
 				<label for="type">User type</label>
 				<br>
-				<div class="radio-inline">
-					<label><input type="radio" name="type" id="type_admin" accesskey="a" tabindex="5" required>Admin</label>
-				</div>
-				<div class="radio-inline">
-					<label><input type="radio" name="type" id="type_student" accesskey="s" tabindex="6" required>Student</label>
-				</div>
+				<label class="custom-control custom-radio">
+					<input type="radio" id="type_admin" name="type" class="custom-control-input" accesskey="a" tabindex="5" required>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Admin</span>
+				</label>
+				<label class="custom-control custom-radio">
+					<input type="radio" id="type_student" name="type" class="custom-control-input" accesskey="s" tabindex="6" required>
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Student</span>
+				</label>
 			</div>
 
 			<div class="form-group">

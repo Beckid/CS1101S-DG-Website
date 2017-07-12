@@ -9,3 +9,6 @@ Desktop.ini
 
 # Ignore the database connection information
 config.php
+
+# Ignore all the uploaded files
+/upload
