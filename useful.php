@@ -129,6 +129,10 @@ function change_password($old, $new) {
 	}
 }
 
+function create_user($uname, $pword, $type, $email) {
+	
+}
+
 /*********************************************************************
 Functions below are used for file management functionality.
 *********************************************************************/

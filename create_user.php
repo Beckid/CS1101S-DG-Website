@@ -50,7 +50,7 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 			<div class="form-group">
 				<label for="email">Email address</label>
 				<input type="email" name="email" class="form-control" id="email" placeholder="someone@example.com" accesskey="e" tabindex="4">
-				<p id="email_help" class="form-text text-muted">
+				<p id="email_help" class="form-text text-muted" style="color: #34495E;">
 					We will send an email to this address for acknowledgement if a new user has been created successfully.
 				</p>
 			</div>
