@@ -63,6 +63,8 @@ function confirm_new_user() {
 function generate_random_password() {
 	if ($("#random").is(":checked")) {
 		$("#manual-password-group").addClass("hidden");
+		$("#password").val("");
+		$("#confirm").val("");
 	} else {
 		$("#manual-password-group").removeClass("hidden");
 	}
