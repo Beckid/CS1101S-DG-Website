@@ -96,7 +96,7 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 
 		<!-- A pop-up modal will be shown to confirm the user wants to delete the selected file. -->
 		<button type="button" class="btn btn-success" id="delete_form_submit" data-toggle="modal" data-target="#submit_modal">Submit</button>
-		<button class="btn btn-primary" onclick="window.location.href='index.php';">Cancel</button>
+		<button type="button" class="btn btn-primary" onclick="window.location.href='index.php'">Cancel</button>
 		<script type="text/javascript">get_selected_file_name();</script>
 	</form>
 </div>

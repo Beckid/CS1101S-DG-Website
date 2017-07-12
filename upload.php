@@ -101,7 +101,7 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 
 			<button type="submit" class="btn btn-success">Upload</button>
 
-			<button class="btn btn-primary" onclick="window.location.href='index.php'">Cancel</button>
+			<button type="button" class="btn btn-primary" onclick="window.location.href='index.php'">Cancel</button>
 		</form>
 	</div>
 </div>
