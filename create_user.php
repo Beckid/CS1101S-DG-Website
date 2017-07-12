@@ -40,10 +40,10 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 				<label for="type">User type</label>
 				<br>
 				<div class="radio-inline">
-					<label><input type="radio" name="type" id="type_admin" accesskey="a" tabindex="5" required>Admin</label>
+					<label><input type="radio" name="type" id="type_admin" accesskey="a" tabindex="2" required>Admin</label>
 				</div>
 				<div class="radio-inline">
-					<label><input type="radio" name="type" id="type_student" accesskey="s" tabindex="6" required>Student</label>
+					<label><input type="radio" name="type" id="type_student" accesskey="s" tabindex="3" required>Student</label>
 				</div>
 			</div>
 
@@ -56,13 +56,24 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 			</div>
 
 			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" name="password" class="form-control" id="password" placeholder="Type password" accesskey="p" tabindex="2" required>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="random" id="random" accesskey="r" tabindex="5" onchange="generate_random_password();">
+						<b>Generate random password</b>
+					</label>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="confirm">Confirm password again</label>
-				<input type="password" name="confirm" class="form-control" id="confirm" placeholder="Type password again" accesskey="c" tabindex="3" required>
+			<div id="manual-password-group" class="">
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" name="password" class="form-control" id="password" placeholder="Type password" accesskey="p" tabindex="6" required>
+				</div>
+
+				<div class="form-group">
+					<label for="confirm">Confirm password again</label>
+					<input type="password" name="confirm" class="form-control" id="confirm" placeholder="Type password again" accesskey="c" tabindex="7" required>
+				</div>
 			</div>
 
 			<div class="form-group">

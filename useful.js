@@ -58,3 +58,12 @@ function confirm_new_user() {
 
 	confirm("You are going to create a new user with the username \"" + user_name + "\". Are you sure to do so?");
 }
+
+// This function checks whether to generate random password when the admin tries to create new users.
+function generate_random_password() {
+	if ($("#random").is(":checked")) {
+		$("#manual-password-group").addClass("hidden");
+	} else {
+		$("#manual-password-group").removeClass("hidden");
+	}
+}
