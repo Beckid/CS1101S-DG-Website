@@ -170,6 +170,25 @@ function create_user($uname, $pword, $type, $email, $is_random) {
 			return 3;
 		}
 
+		// Use PHP standard encrypted single-way hash function to encrypt the password.
+		// Notice: we should never store the actual password in the database.
+		// PASSWORD_DEFAULT means the default encryption algorithm, Bcrypt.
+		$encrypted = password_hash($pword, PASSWORD_DEFAULT);
+
+		// Prepared statement for query to the database later (to avoid SQL injection attack).
+		$stmt = $db->prepare("INSERT INTO " . DB_PREFIX . ".users ([user_type], [username], [password]) VALUES (?, ?, ?)");
+		// Query to the database or report error.
+		try {
+			$stmt->execute(array(get_user_type($type), $uname, $encrypted));
+		} catch (PDOException $e) {
+			// Catch the potential exception here for defensive programming practice.
+			die("Cannot query to the database. ". $e->getMessage() . "<br>");
+		}
+
+		// Close the database connection.
+		$db = null;
+
+		// The new user has been created successfully.
 		return 0;
 	}
 }
@@ -183,6 +202,18 @@ function password_strength_checker($pword) {
 function generate_random_password() {
 	// TODO: replace it by random_bytes when we upgrade to PHP 7.
 	return bin2hex(openssl_random_pseudo_bytes(8));
+}
+
+// Get the numerical value of user type to insert into the database.
+function get_user_type($type_str) {
+	if ($type_str == "admin") {
+		return 0;
+	} else if ($type_str == "student") {
+		return 1;
+	} else {
+		// Catch the potential exception here for defensive programming practice.
+		die("The usertype is wrong.");
+	}
 }
 
 /*********************************************************************
