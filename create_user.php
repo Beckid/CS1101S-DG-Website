@@ -28,7 +28,7 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 		// The value of type here is either 'student' or 'admin'.
 		$type = $_POST['type'];
 
-		$result = create_user($uname, $pword, $type, $email, $is_random);
+		$result = create_user($uname, $password, $type, $email, $is_random);
 	}
 }
 ?>
@@ -50,7 +50,11 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 					if ($result == 1) {
 						echo "The two passwords you have entered do not match.";
 					} else if ($result == 2) {
-						echo "You have entered a wrong old password. Please check again.";
+						echo "There is an existing user with the same username. Please change.";
+					} else if ($result == 3) {
+						echo "Your password is too simple. Guideline for a good password: " .
+							 "1) It has to be at least 8 characters long; " . 
+							 "2) It has to contain both numeric and alphabetic digits.";
 					}
 				?>
 				<script type="text/javascript">add_alert_class();</script>

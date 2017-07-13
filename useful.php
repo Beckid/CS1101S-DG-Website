@@ -129,8 +129,55 @@ function change_password($old, $new) {
 	}
 }
 
+// Create a new user and send a confirmation email.
 function create_user($uname, $pword, $type, $email, $is_random) {
-	
+	// Avoid SQL injection by filtering special characters.
+	$uname = htmlspecialchars($uname);
+	$pword = htmlspecialchars($pword);
+	$type = htmlspecialchars($type);
+	$email = htmlspecialchars($email);
+
+	// Create connection to the database or report error.
+	$db = db_connect();
+
+	// Prepared statement for query to the database later (to avoid SQL injection attack).
+	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".users WHERE username = ?");
+	// Query to the database or report error.
+	try {
+		$stmt->execute(array($uname));
+	} catch (PDOException $e) {
+		// Catch the potential exception here for defensive programming practice.
+		die("Cannot query to the database. ". $e->getMessage() . "<br>");
+	}
+
+	// Fetch the first row returned by the statement to an associate array.
+	// Avoid using $stmt->rowCount() here due to known compatibility issues.
+	if ($stmt->fetch(PDO::FETCH_ASSOC) != null) {
+		// Close the database connection.
+		$db = null;
+
+		// There exists a user with the same username.
+		return 2;
+	} else if (!password_strength_checker($pword)) {
+		return 3;
+	} else {
+		if ($is_random) {
+			$pword = generate_random_password();
+		}
+
+		return 0;
+	}
+}
+
+// Check whether a given password is strong enough.
+function password_strength_checker($pword) {
+	return strlen($pword) >= 8 && preg_match("#[0-9]+#", $pword) && preg_match("#[a-zA-Z]+#", $pword);
+}
+
+// Generate a random password.
+function generate_random_password() {
+	// Notice: replace it by random_bytes when we upgrade to PHP 7.
+	return bin2hex(openssl_random_pseudo_bytes(8));
 }
 
 /*********************************************************************
