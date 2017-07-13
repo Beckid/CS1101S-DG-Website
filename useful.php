@@ -158,11 +158,16 @@ function create_user($uname, $pword, $type, $email, $is_random) {
 
 		// There exists a user with the same username.
 		return 2;
-	} else if (!password_strength_checker($pword)) {
-		return 3;
 	} else {
 		if ($is_random) {
+			// Generates a random password.
 			$pword = generate_random_password();
+		} else if (!password_strength_checker($pword)) {
+			// Close the database connection.
+			$db = null;
+
+			// The password is too simple.
+			return 3;
 		}
 
 		return 0;
@@ -176,7 +181,7 @@ function password_strength_checker($pword) {
 
 // Generate a random password.
 function generate_random_password() {
-	// Notice: replace it by random_bytes when we upgrade to PHP 7.
+	// TODO: replace it by random_bytes when we upgrade to PHP 7.
 	return bin2hex(openssl_random_pseudo_bytes(8));
 }
 

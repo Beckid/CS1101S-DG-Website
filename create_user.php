@@ -41,7 +41,7 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 		<form role="form" method="post" action="create_user.php" onsubmit="confirm_new_user();">
 			<div id="error_message" class="">
 				<?php if ($result == 0) {
-					echo "Your password has been changed successfully.";
+					echo "A new user has been created successfully. A confirmation email has been sent to " . $email . ".";
 				?>
 				<script type="text/javascript">add_success_class();</script>
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
