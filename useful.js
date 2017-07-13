@@ -55,8 +55,14 @@ function verify_name() {
 // This function prompts a confirm window when the admin tries to create new users.
 function confirm_new_user() {
 	var user_name = $("#username").val();
+	var message = "You are going to create a new user with the username \"" + user_name + "\". Are you sure to do so?";
 
-	confirm("You are going to create a new user with the username \"" + user_name + "\". Are you sure to do so?");
+	if (confirm(message)) {
+		return true;
+	} else {
+		event.preventDefault();
+		return false;
+	}
 }
 
 // This function checks whether to generate random password when the admin tries to create new users.
@@ -65,6 +71,8 @@ function generate_random_password() {
 		$("#manual-password-group").addClass("hidden");
 		$("#password").val("");
 		$("#confirm").val("");
+		$("#password").removeAttr("required");
+		$("#confirm").removeAttr("required");
 	} else {
 		$("#manual-password-group").removeClass("hidden");
 	}

@@ -129,7 +129,7 @@ function change_password($old, $new) {
 	}
 }
 
-function create_user($uname, $pword, $type, $email) {
+function create_user($uname, $pword, $type, $email, $is_random) {
 	
 }
 
