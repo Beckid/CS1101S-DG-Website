@@ -176,7 +176,7 @@ function create_user($uname, $pword, $type, $email, $is_random) {
 		$encrypted = password_hash($pword, PASSWORD_DEFAULT);
 
 		// Prepared statement for query to the database later (to avoid SQL injection attack).
-		$stmt = $db->prepare("INSERT INTO " . DB_PREFIX . ".users ([user_type], [username], [password]) VALUES (?, ?, ?)");
+		$stmt = $db->prepare("INSERT INTO " . DB_PREFIX . ".users (user_type, username, password) VALUES (?, ?, ?)");
 		// Query to the database or report error.
 		try {
 			$stmt->execute(array(get_user_type($type), $uname, $encrypted));

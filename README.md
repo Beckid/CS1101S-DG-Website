@@ -38,7 +38,7 @@ CREATE TABLE users (
     user_type int NOT NULL,
     username varchar(50) UNIQUE NOT NULL,
     password varchar(80) NOT NULL,
-    PRIMARY KEY(Id)
+    PRIMARY KEY(id)
 );
 ```
 To create an admin user, please type in the following SQL command:
@@ -60,7 +60,7 @@ CREATE TABLE files (
     author varchar(100),
     description varchar(500),
     file_path varchar(200) NOT NULL,
-    PRIMARY KEY(Id)
+    PRIMARY KEY(id)
 );
 ```
 
@@ -79,18 +79,18 @@ CREATE TABLE users (
     id int IDENTITY(1, 1) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_type int NOT NULL,
-    username varchar(50) NOT NULL,
+    username varchar(50) UNQIUE NOT NULL,
     password varchar(80) NOT NULL,
-    PRIMARY KEY(Id)
+    PRIMARY KEY(id)
 );
 ```
 To create an admin user, please type in the following SQL command:
 ```
-INSERT INTO dbo.users ([user_type], [username], [password]) VALUES (0, 'Jack', '123456');
+INSERT INTO dbo.users (user_type, username, password) VALUES (0, 'Jack', '123456');
 ```
 To create a student user (normal user), please type in the following SQL command:
 ```
-INSERT INTO dbo.users ([user_type], [username], [password]) VALUES (1, 'Lily', '987654');
+INSERT INTO dbo.users (user_type, username, password) VALUES (1, 'Lily', '987654');
 ```
 
 - Create _files_ Table<br>
@@ -103,7 +103,7 @@ CREATE TABLE files (
     author varchar(100),
     description varchar(500),
     file_path varchar(200) NOT NULL,
-    PRIMARY KEY(Id)
+    PRIMARY KEY(id)
 );
 ```
 
