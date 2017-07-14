@@ -9,3 +9,4 @@ Desktop.ini
 
 # Ignore the database connection information
 config.php
+config.inc.php
