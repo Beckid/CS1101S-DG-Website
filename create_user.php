@@ -55,6 +55,11 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 						echo "Your password is too simple. Guideline for a good password: " .
 							 "1) It has to be at least 8 characters long; " . 
 							 "2) It has to contain both numeric and alphabetic digits.";
+					} else if ($result == 4) {
+						echo "The account has been created. " . 
+							 "However, it seems that the confirmation email has not been sent successfully."
+					} else {
+						echo "Unknown error: Please contact the system admin.";
 					}
 				?>
 				<script type="text/javascript">add_alert_class();</script>

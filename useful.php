@@ -1,6 +1,7 @@
 <?php
 // To load the database configuration.
 require_once 'config.php';
+require_once 'mailer.php';
 
 // To check the _SESSION variable to decide whether the user has logged in.
 function logged_in() {
@@ -189,7 +190,8 @@ function create_user($uname, $pword, $type, $email, $is_random) {
 		$db = null;
 
 		// The new user has been created successfully.
-		return 0;
+		// For the last step, we need to send the email.
+		return create_user_email($email, $uname, $pword, $is_random);
 	}
 }
 
@@ -214,6 +216,11 @@ function get_user_type($type_str) {
 		// Catch the potential exception here for defensive programming practice.
 		die("The usertype is wrong.");
 	}
+}
+
+// Send confirmation email to the desired email address.
+function create_user_email($email, $uname, $pword, $is_random) {
+
 }
 
 /*********************************************************************
