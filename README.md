@@ -60,7 +60,7 @@ CREATE TABLE files (
 );
 ```
 
-- Visualization Tool
+- Visualization Tool<br>
 We recommend you to use [phpMyAdmin](https://www.phpmyadmin.net/)
 
 ### Set-up of Database (using Microsoft SQL Server)
@@ -103,7 +103,7 @@ CREATE TABLE files (
 );
 ```
 
-- Visualization Tool
+- Visualization Tool<br>
 We recommend you to use [SQL Database Studio](https://www.sqldatabasestudio.com/)
 
 ## Configuration of database connection
