@@ -11,10 +11,14 @@ AY2017/2018 Semester 1<br>
 
 ## Main Features
 1. Support file upload / delete for admin users;
-2. Support file download (only after login in) for other users.
+2. Support file download (only after login in) for other users;
+3. Support common user management functions for admin users.
 
 ## Implementation
 PHP was adapted as the server-side language, simple HTML / CSS / JavaScript was adapted as the client-side languages, Bootstrap was adapted as the front-end framework.
+
+### Inspiration
+More and more web frameworks have been developed nowadays. But, why don't we just go back and see what we can do with only the most basic system functions? What kind of magic will happen?
 
 ## How to Use
 - Notice that in the latest release, we have switched from mySQLi to PDO (PHP Database Object). That means we have adapted to the OOP style rather than procedural style. Also, this provides a unified interface in case that users may be using different database, like mySQL, PostGreSQL, etc.
