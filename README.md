@@ -61,7 +61,7 @@ CREATE TABLE files (
 ```
 
 - Visualization Tool<br>
-We recommend you to use [phpMyAdmin](https://www.phpmyadmin.net/)
+We recommend you to use [phpMyAdmin](https://www.phpmyadmin.net/).
 
 ### Set-up of Database (using Microsoft SQL Server)
 - Overview<br>
@@ -104,7 +104,7 @@ CREATE TABLE files (
 ```
 
 - Visualization Tool<br>
-We recommend you to use [SQL Database Studio](https://www.sqldatabasestudio.com/)
+We recommend you to use [SQL Database Studio](https://www.sqldatabasestudio.com/).
 
 ## Configuration of database connection
 - Change the file name of "config.example.php" into "config.php"
