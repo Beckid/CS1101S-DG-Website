@@ -221,7 +221,32 @@ function get_user_type($type_str) {
 
 // Send confirmation email to the desired email address.
 function create_user_email($email, $uname, $pword, $is_random) {
-	return 0;
+	$subject = "User Registration Confirmation - CS1101S DG Website";
+	$message = "Dear user,\n\n" .
+			   "Welcome to CS1101S DG Website!\n" .
+			   "We notice that a new account associated with this email address has been created recently.\n" .
+			   "This email is to acknowledge you that the user registration is successful.\n\n" .
+			   "Username: " . $uname . "\n";
+
+	if ($is_random) {
+		$message = $message . "Password: " . $pword . "\n\n" .
+				   "We suggest you to log in and change your password as soon as possible.\n\n";
+	} else {
+		$message = $message . "\n";
+	}
+
+	$message = $message .
+			   "Hereby, we would like to thank you again for using CS1101S DG Website.\n\n" .
+			   "Sincere,\n" . 
+			   "Website Admin\n" .
+			   "Visit us at https://cs1101s.azurewebsites.net/";
+
+
+	if (email($email, $subject, $message)) {
+		return 0;
+	} else {
+		return 4;
+	}
 }
 
 /*********************************************************************
