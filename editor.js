@@ -51,6 +51,7 @@ function editor_set_tab_size() {
 	ace_editor.session.setTabSize(selected_tab_size);
 }
 
+// To empty the content inside the Ace editor.
 function empty_content() {
-	
+	ace_editor.setValue("");
 }
