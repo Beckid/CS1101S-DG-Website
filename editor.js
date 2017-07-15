@@ -18,6 +18,27 @@ function editor_init() {
         enableSnippets: false,
         enableLiveAutocompletion: true
     });
+
+    // Add keyboard shortcut for uploading and editing local files.
+    ace_editor.commands.addCommand({
+    	name: "editLocalFile",
+    	bindKey: { win: "Ctrl-O", mac: "Command-O" },
+    	exec: function(arg) {
+    		$('#file_upload').trigger('click');
+    	}
+    });
+
+    // Add keyboard shortcut for displaying the keyboard shortcut list.
+    ace_editor.commands.addCommand({
+        name: "showKeyboardShortcuts",
+        bindKey: { win: "Ctrl-Alt-h", mac: "Command-Alt-h" },
+        exec: function(arg) {
+            ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+                module.init(arg);
+                ace_editor.showKeyboardShortcuts();
+            });
+        }
+    });
 }
 
 // Set the theme for Ace editor.
@@ -56,8 +77,18 @@ function empty_content() {
 	ace_editor.setValue("");
 }
 
+// To save the code so that users can see it again when opening the website in the same browser.
+// Notice: use localStorage rather than sessionStorage to save it for a longer time.
+// Need HTML5 support for this feature (suggest to use Chrome browser).
+function save_code() {
+
+}
+
 // To read the content of the files uploaded from local computer as plain text.
 function read_upload_file() {
+	// Trigger the upload of local files.
+	$('#file_upload').trigger('click');
+
 	// Notice: use DOM instead of jQuery object here.
 	var file_to_read = document.getElementById("file_upload").files[0];
 
