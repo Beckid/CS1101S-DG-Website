@@ -128,12 +128,17 @@
 			</select>
 		</div>
 
+		<!-- Used to upload code from files in the local computer -->
+		<div class="form-group hidden">
+			<input type="file" name="file_upload" class="form-control" id="file_upload" onchange="read_upload_file();">
+		</div>
+
 		<div class="btn-toolbar" role="toolbar" aria-label="Tools for text editor">
 			<button type="button" class="btn btn-success" aria-label="Evaluate the code in the editor">
 				<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
 			</button>
 
-			<button type="button" class="btn btn-primary" aria-label="Upload code">
+			<button type="button" class="btn btn-primary" aria-label="Upload code" onclick="$('#file_upload').trigger('click');">
 				<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
 			</button>
 

@@ -55,3 +55,16 @@ function editor_set_tab_size() {
 function empty_content() {
 	ace_editor.setValue("");
 }
+
+// To read the content of the files uploaded from local computer as plain text.
+function read_upload_file() {
+	// Notice: use DOM instead of jQuery object here.
+	var file_to_read = document.getElementById("file_upload").files[0];
+
+	var reader = new FileReader();
+	reader.onload = function(load_event) {
+	  ace_editor.setValue(load_event.target.result);
+	};
+
+	reader.readAsText(file_to_read, "UTF-8");
+}
