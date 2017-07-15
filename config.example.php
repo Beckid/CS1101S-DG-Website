@@ -20,4 +20,7 @@ define('DSN', $dsn, true);
 // Settings that are required for using gmail to send email.
 define('EMAIL_ADDR', 'random@gmail.com', true);
 define('EMAIL_PWORD', 'setUp?', true);
+
+// Every email will be BCC'ed to admin's personal email.
+define('ADMIN_EMAIL', 'iamadmin@outlook.com', true);
 ?>
