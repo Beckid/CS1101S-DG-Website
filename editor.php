@@ -142,8 +142,8 @@
 				<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
 			</button>
 
-			<button type="button" class="btn btn-warning" aria-label="Download code">
-				<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+			<button type="button" class="btn btn-warning" aria-label="Save code" onclick="save_code();">
+				<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
 			</button>
 
 			<button type="button" class="btn btn-info" aria-label="Clear the code in the editor" onclick="empty_content();">

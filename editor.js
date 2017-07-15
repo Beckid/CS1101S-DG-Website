@@ -39,6 +39,18 @@ function editor_init() {
             });
         }
     });
+
+    // Add keyboard shortcut for saving code to the browser's local storage.
+    ace_editor.commands.addCommand({
+    	name: "saveCode",
+    	bindKey: { win: "Ctrl-S", mac: "Command-S" },
+    	exec: function(arg) {
+    		save_code();
+    	}
+    });
+
+    // To load the code in localStorage saved from last time.
+    get_saved_code();
 }
 
 // Set the theme for Ace editor.
@@ -77,11 +89,20 @@ function empty_content() {
 	ace_editor.setValue("");
 }
 
-// To save the code so that users can see it again when opening the website in the same browser.
-// Notice: use localStorage rather than sessionStorage to save it for a longer time.
-// Need HTML5 support for this feature (suggest to use Chrome browser).
+// To save the code to browser's localStorage and as a text file.
 function save_code() {
+	var code = ace_editor.getValue();
 
+	localStorage.setItem("ace_cs1101s_dg", code);
+}
+
+// To auto-load the code saved from last time by the user on the same browser.
+function get_saved_code() {
+	var code = localStorage.getItem("ace_cs1101s_dg");
+
+	if (code != null) {
+		ace_editor.setValue(code);
+	}
 }
 
 // To read the content of the files uploaded from local computer as plain text.
