@@ -1,3 +1,4 @@
+	<?php require_once 'theme.php'; ?>
 	<title>CS1101S Discussion Group Website 2017</title>
 
 	<!-- Character setting, icon setting and mobile compatibility -->
@@ -17,11 +18,11 @@
 	<![endif]-->
 
 	<!-- Latest compiled and minified CSS -->
-	<!-- Has been changed to Bootswatch Flatly theme. -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Notice: we will dynamically load it here. It may vary based on the time of visiting this website. -->
+	<link rel="stylesheet" href="<?php echo get_theme_link(); ?>" integrity="<?php echo get_theme_integrity(); ?>" crossorigin="anonymous">
 
 	<!-- jQuery file, must be put before Bootstrap javascript file -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
