@@ -50,7 +50,7 @@ function mail($to, $to_name, $subject, $body) {
 	$mail->Subject = $subject;
 
 	// Replace the plain text body with one created manually
-	$mail->AltBody = 'This is a plain-text message body';
+	$mail->AltBody = $body;
 
 	// Return true if the email has been sent successfully, otherwise false.
 	return $mail->send();
