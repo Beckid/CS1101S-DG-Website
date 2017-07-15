@@ -12,7 +12,8 @@ AY2017/2018 Semester 1<br>
 ## Main Features
 1. Support file upload / delete for admin users;
 2. Support file download (only after login in) for other users;
-3. Support common user management functions for admin users.
+3. Support common user management functions for admin users;
+4. Support a simple but powerful online text editor (credit to [Ace Editor](https://ace.c9.io/))
 
 ## Implementation
 PHP was adapted as the server-side language, simple HTML / CSS / JavaScript was adapted as the client-side languages, Bootstrap was adapted as the front-end framework.
