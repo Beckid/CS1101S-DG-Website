@@ -1,6 +1,7 @@
 <?php
 // To load the database configuration.
 require_once 'config.php';
+// To load the required mailer functionality.
 require_once 'mailer.php';
 
 // To check the _SESSION variable to decide whether the user has logged in.
@@ -220,7 +221,7 @@ function get_user_type($type_str) {
 
 // Send confirmation email to the desired email address.
 function create_user_email($email, $uname, $pword, $is_random) {
-
+	return 0;
 }
 
 /*********************************************************************
