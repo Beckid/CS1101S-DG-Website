@@ -25,9 +25,17 @@
 
 				if (logged_in() && isset($_SESSION['usertype']) && $_SESSION['usertype'] == "admin") {
 				?>
-				<li><a href="upload.php">Upload Files</a></li>
-				<li><a href="delete.php">Delete Files</a></li>
-				<li><a href="create_user.php">Create User</a></li>
+				<li class="dropdown">
+					<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Administration <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="upload.php">Upload Files</a></li>
+						<li><a href="delete.php">Delete Files</a></li>
+						<li><a href="create_user.php">Create User</a></li>
+						<li><a href="password_tool.php">Password Tool</a></li>
+					</ul>
+				</li>
 				<?php
 				} ?>
 			</ul>
