@@ -166,10 +166,51 @@ function get_extend_filename(language) {
             return "sql";
         case "css":
             return "css";
+        case "django":
+            return "py";
+        case "html":
+            return "html";
+        case "html_ruby":
+            return "html.erb";
+        case "javascript":
+            return "js";
+        case "php":
+            return "php";
+        case "xml":
+            return "xml";
         case "gitignore":
             return "gitignore";
         case "golang":
-            return "";
+            return "py";
+        case "haskell":
+            return "hs";
+        case "java":
+            return "java";
+        case "json":
+            return "json";
+        case "latex":
+            return "tex";
+        case "markdown":
+            return "md";
+        case "matlab":
+            return "m";
+        case "pascal":
+            return "pas";
+        case "perl":
+            return "pl";
+        case "powershell":
+            return "ps1";
+        case "python":
+            return "py";
+        case "r":
+            return "r";
+        case "scala":
+            return "scala";
+        case "scheme":
+            return "scm";
+        case "swift":
+            return "swift";
+        case "text":
         default:
             return "txt";
     }
@@ -178,4 +219,3 @@ function get_extend_filename(language) {
 function get_mime_type() {
 
 }
-
