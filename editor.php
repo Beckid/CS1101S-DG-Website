@@ -78,22 +78,26 @@
 					<option value="sql">SQL</option>
 					<option value="sqlserver">SQL Server</option>
 				</optgroup>
+				<optgroup label="Web">
+					<option value="css">CSS</option>
+					<option value="django">Django</option>
+					<option value="html">HTML</option>
+				    <option value="html_ruby">HTML (Ruby)</option>
+				    <option value="javascript" selected>JavaScript</option>
+				    <option value="php">PHP</option>
+				    <option value="xml">XML</option>
+				</optgroup>
 			    <optgroup label="Others">
-			    	<option value="css">CSS</option>
 				    <option value="gitignore">Gitignore</option>
 				    <option value="golang">Go</option>
 				    <option value="haskell">Haskell</option>
-				    <option value="html">HTML</option>
-				    <option value="html_ruby">HTML (Ruby)</option>
 				    <option value="java">Java</option>
-				    <option value="javascript" selected>JavaScript</option>
 				    <option value="json">JSON</option>
 				    <option value="latex">LaTeX</option>
 				    <option value="markdown">Markdown</option>
 				    <option value="matlab">MATLAB</option>
 				    <option value="pascal">Pascal</option>
 				    <option value="perl">Perl</option>
-				    <option value="php">PHP</option>
 				    <option value="powershell">Powershell</option>
 				    <option value="python">Python</option>
 				    <option value="r">R</option>
@@ -101,9 +105,7 @@
 				    <option value="scala">Scala</option>
 				    <option value="scheme">Scheme</option>
 				    <option value="swift">Swift</option>
-				    <option value="text">Plain Text</option
-				    <option value="xml">XML</option>
-				    <option value="django">Django</option></select>
+				    <option value="text">Plain Text</option>
 			    </optgroup>
 			</select>
 		</div>

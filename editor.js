@@ -134,10 +134,48 @@ function read_upload_file() {
 
 // To download the code to the local computer.
 function download_code() {
+    // Save the code to browser's localStorage at first.
     save_code();
+
+    // Create the link <a> object.
+    var link_object = document.createElement("a");
+    // Change the value of download attribute to force the filename.
+    link_object.download = "unamed_code." + get_extend_filename($("#mode_select").val());
 }
 
 // To empty the content inside the Ace editor.
 function empty_content() {
     ace_editor.setValue("");
 }
+
+/***********************************************************
+* Helper functions
+***********************************************************/
+function get_extend_filename(language) {
+    switch (language) {
+        case "c_cpp":
+            return "cpp";
+        case "csharp":
+            return "cs";
+        case "objectivec":
+            return "mm";
+        case "mysql":
+        case "pgsql":
+        case "sql":
+        case "sqlserver":
+            return "sql";
+        case "css":
+            return "css";
+        case "gitignore":
+            return "gitignore";
+        case "golang":
+            return "";
+        default:
+            return "txt";
+    }
+}
+
+function get_mime_type() {
+
+}
+
