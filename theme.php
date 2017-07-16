@@ -1,4 +1,8 @@
 <?php
+// Set the default timezone to be Singapore local time.
+// Noitce this setting only applies to the current script.
+date_default_timezone_set('Asia/Singapore');
+
 $themes = array(
 	array("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css",
 		  "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"),

@@ -12,8 +12,8 @@ require_once 'nav.php';
 // Noitce this setting only applies to the current script.
 date_default_timezone_set('Asia/Singapore');
 
-// Only after login, the user can use this tool.
-if (!logged_in()) {
+// Only admin user can use this tool.
+if (!logged_in() || $_SESSION['usertype'] != "admin") {
 	header("location: login.php");
 } else if($_POST) {
 	$pword = $_POST['input'];
