@@ -38,8 +38,6 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 		if (file_upload($_FILES['file'], $_POST['fileName'], $_POST['author'], $_POST['description'])) {
 			// Record that the upload is successful.
 			$result = 0;
-			// Re-direct to the homepage.
-			header("location: index.php");
 		} else {
 			$result = 4;
 		}
@@ -71,6 +69,12 @@ if (!logged_in() || $_SESSION['usertype'] != "admin") {
 					} else {
 						echo "Unknown error: Please contact the system admin.";
 					}
+				} else if ($result == 0) {
+				?>
+					<script type="text/javascript">add_success_class();</script>
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<?php
+					echo "Successful: You have uploaded the selected file.";
 				}
 				?>
 			</div>
