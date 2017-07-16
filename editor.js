@@ -231,7 +231,3 @@ function get_extend_filename(language) {
             return "txt";
     }
 }
-
-function get_mime_type() {
-
-}
