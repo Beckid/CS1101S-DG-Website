@@ -34,6 +34,7 @@
 						<li><a href="delete.php">Delete Files</a></li>
 						<li><a href="create_user.php">Create User</a></li>
 						<li><a href="password_tool.php">Password Tool</a></li>
+						<li><a href="datetime_tool.php">Datetime Tool</a></li>
 					</ul>
 				</li>
 				<?php
