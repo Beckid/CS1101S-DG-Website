@@ -134,13 +134,29 @@ function read_upload_file() {
 
 // To download the code to the local computer.
 function download_code() {
+    // Avoid potential compatibility problems among different browsers.
+    url_class = window.URL || window.webkitURL;
+
     // Save the code to browser's localStorage at first.
     save_code();
 
     // Create the link <a> object.
     var link_object = document.createElement("a");
     // Change the value of download attribute to force the filename.
-    link_object.download = "unamed_code." + get_extend_filename($("#mode_select").val());
+    link_object.download = "untitled." + get_extend_filename($("#mode_select").val());
+
+    // Create Blob object to store the code inside.
+    var blob_object = new Blob([ace_editor.getValue()], { type:"text/plain" });
+    // Create the temporary URL object.
+    var url_object = url_class.createObjectURL(blob_object);
+
+    // Set the value of href attribute to the url object.
+    link_object.href = url_object;
+    // Trigger the click of the link <a> object.
+    link_object.click();
+
+    // Destroy the URL object for better performance.
+    url_class.revokeObjectURL(url_object);
 }
 
 // To empty the content inside the Ace editor.
