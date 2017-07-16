@@ -134,7 +134,7 @@
 		</div>
 
 		<div class="btn-toolbar" role="toolbar" aria-label="Tools for text editor">
-			<button type="button" class="btn btn-success" aria-label="Evaluate the code in the editor">
+			<button type="button" class="btn btn-success" aria-label="Evaluate the code in the editor" onclick="evaluate_code();">
 				<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
 			</button>
 

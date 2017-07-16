@@ -49,6 +49,15 @@ function editor_init() {
     	}
     });
 
+    // Add keyboard shortcut for evaluating JavaScript code.
+    ace_editor.commands.addCommand({
+        name: "evaluateJavaScriptCode",
+        bindKey: { win: "Ctrl-Enter", mac: "Command-Enter" },
+        exec: function(arg) {
+            evaluate_code();
+        }
+    });
+
     // To load the code in localStorage saved from last time.
     get_saved_code();
 }
@@ -84,11 +93,6 @@ function editor_set_tab_size() {
 	ace_editor.session.setTabSize(selected_tab_size);
 }
 
-// To empty the content inside the Ace editor.
-function empty_content() {
-	ace_editor.setValue("");
-}
-
 // To save the code to browser's localStorage.
 function save_code() {
 	var code = ace_editor.getValue();
@@ -103,6 +107,13 @@ function get_saved_code() {
 	if (code != null) {
 		ace_editor.setValue(code);
 	}
+}
+
+// To evaluate the code in the editor (only if the language is JavaScript).
+function evaluate_code() {
+    if ($("#mode_select").val() === "javascript") {
+        eval(ace_editor.getValue());
+    }
 }
 
 // To read the content of the files uploaded from local computer as plain text.
@@ -124,4 +135,9 @@ function read_upload_file() {
 // To download the code to the local computer.
 function download_code() {
     save_code();
+}
+
+// To empty the content inside the Ace editor.
+function empty_content() {
+    ace_editor.setValue("");
 }
