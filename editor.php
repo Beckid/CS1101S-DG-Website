@@ -142,7 +142,7 @@
 				<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
 			</button>
 
-			<button type="button" class="btn btn-warning" aria-label="Save code" onclick="save_code();">
+			<button type="button" class="btn btn-warning" aria-label="Save code" onclick="download_code();">
 				<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
 			</button>
 

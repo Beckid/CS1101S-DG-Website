@@ -40,9 +40,9 @@ function editor_init() {
         }
     });
 
-    // Add keyboard shortcut for saving code to the browser's local storage.
+    // Add keyboard shortcut for saving code to the browser's localStorage.
     ace_editor.commands.addCommand({
-    	name: "saveCode",
+    	name: "saveCodeToLocalStorage",
     	bindKey: { win: "Ctrl-S", mac: "Command-S" },
     	exec: function(arg) {
     		save_code();
@@ -89,7 +89,7 @@ function empty_content() {
 	ace_editor.setValue("");
 }
 
-// To save the code to browser's localStorage and as a text file.
+// To save the code to browser's localStorage.
 function save_code() {
 	var code = ace_editor.getValue();
 
@@ -119,4 +119,9 @@ function read_upload_file() {
 	};
 
 	reader.readAsText(file_to_read, "UTF-8");
+}
+
+// To download the code to the local computer.
+function download_code() {
+    save_code();
 }
