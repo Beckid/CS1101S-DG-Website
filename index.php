@@ -52,7 +52,7 @@ if (!logged_in()) {
 			<td><?php echo $all_files[$i]['author']; ?></td>
 			<td><?php echo $all_files[$i]['uploaded_at']; ?></td>
 			<td><?php echo $all_files[$i]['description']; ?></td>
-			<td><a href="javascript:void(0);" download="<?php echo $saveAsName; ?>" onclick="fill_download_form(<?php echo $all_files[$i]['id']; ?>);">Click here</a></td>
+			<td><a href="javascript:void(0);" class="download_link" download="<?php echo $saveAsName; ?>" onclick="fill_download_form(<?php echo $all_files[$i]['id']; ?>);">Click here</a></td>
 		</tr>
 		<?php
 		}
@@ -62,6 +62,12 @@ if (!logged_in()) {
 <?php
 }
 ?>
+
+<script type="text/javascript">
+	$(".download_link").click(function(event) {
+		event.preventDefault();
+	})
+</script>
 
 <br><br><br><br>
 <?php require_once 'footer.php'; ?>
