@@ -114,6 +114,7 @@ We recommend you to use [SQL Database Studio](https://www.sqldatabasestudio.com/
 ## Configuration of database connection
 - Change the file name of "config.example.php" into "config.php"
 - Change the default username and password.
+- Notice, you may want to move the "config.php" out of the wwwroot repository due to security reason, in which case you should change line 3 in "useful.php" to pointing to the correct position. 
 
 ## About maximum file size
 - Open your php.ini, change the value of upload_max_filesize (the default value is 2M, recommend to set it to be 5M).
