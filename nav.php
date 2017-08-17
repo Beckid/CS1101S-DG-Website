@@ -17,8 +17,8 @@
 			<ul class="nav navbar-nav navbar-left">
 				<li><a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a></li>
 				<li><a href="https://sourceacademy.comp.nus.edu.sg/" target="_blank">Source Academy</a></li>
-				<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE</a></li>
-				<li><a href="https://comp.nus.edu.sg/~e0134079/" target="_blank">Yunpeng's Website</a></li>
+				<li><a href="http://128.199.210.247/playground/" target="_blank">Source Playground</a></li>
+				<li><a href="https://beckid.github.io/" target="_blank">Yunpeng's Website</a></li>
 				<li><a href="editor.php">Online Text Editor</a></li>
 				<?php
 				require_once 'useful.php';
@@ -35,6 +35,7 @@
 						<li><a href="create_user.php">Create User</a></li>
 						<li><a href="password_tool.php">Password Tool</a></li>
 						<li><a href="datetime_tool.php">Datetime Tool</a></li>
+						<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE (old)</a></li>
 					</ul>
 				</li>
 				<?php
