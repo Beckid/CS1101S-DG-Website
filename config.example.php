@@ -16,7 +16,7 @@ define('DB_PWORD', '123456', true);
 if (DB_TYPE != 'sqlsrv') {
 	$dsn = DB_TYPE . ":server=" . DB_HOST . ";database=" . DB_NAME;
 } else {
-	$dsn = DB_TYPE . ":host=" . DB_HOST . ";db_name=" . DB_NAME;
+	$dsn = DB_TYPE . ":server = tcp:" . DB_HOST . "; Database=" . DB_NAME;
 }
 
 define('DSN', $dsn, true);
