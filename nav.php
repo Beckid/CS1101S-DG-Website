@@ -35,6 +35,7 @@
 						<li><a href="create_user.php">Create User</a></li>
 						<li><a href="password_tool.php">Password Tool</a></li>
 						<li><a href="datetime_tool.php">Datetime Tool</a></li>
+						<li><a href="mailer_test.php">Mailer Test Tool</a></li>
 						<li><a href="info.php">PHPinfo()</a></li>
 						<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE (old)</a></li>
 					</ul>
