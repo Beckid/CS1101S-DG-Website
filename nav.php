@@ -17,7 +17,7 @@
 			<ul class="nav navbar-nav navbar-left">
 				<li><a href="https://ivle.nus.edu.sg/" target="_blank">IVLE</a></li>
 				<li><a href="https://sourceacademy.comp.nus.edu.sg/" target="_blank">Source Academy</a></li>
-				<li><a href="http://128.199.210.247/playground/" target="_blank">Source Playground</a></li>
+				<li><a href="http://sourceacademy.comp.nus.edu.sg/playground" target="_blank">Source Playground</a></li>
 				<li><a href="https://yunpengn.github.io/" target="_blank">Yunpeng's Website</a></li>
 				<li><a href="editor.php">Online Text Editor</a></li>
 				<?php
