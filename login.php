@@ -26,7 +26,7 @@ if (logged_in()) {
 		// Login validation fails.
 		$login_fail = true;
 	}
-};
+}
 ?>
 
 <h1>User Login</h1>
