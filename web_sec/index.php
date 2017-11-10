@@ -3,7 +3,7 @@
 <html>
 <head>
 	<?php require_once '../head.php'; ?>
-	<script type="text/javascript" src="useful.js"></script>
+	<script type="text/javascript" src="../useful.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
