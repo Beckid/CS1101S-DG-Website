@@ -27,7 +27,7 @@ if (!logged_in()) {
 <?php
 } else {
 	function formatTime($date) {
-		$date = date_create($date);
+		$date = date_create('2018-08-03 05:35:23');
 		date_timezone_set($date, timezone_open('Asia/Singapore'));
 		return date_format($date, 'H:m d M, Y');
 	}
