@@ -72,7 +72,17 @@ CREATE TABLE files (
 - Visualization Tool<br>
 We recommend you to use [phpMyAdmin](https://www.phpmyadmin.net/).
 
+### Set-up of Database (using PostgreSQL)
+
+- Make sure you have properly setup your local PostgreSQL installation.
+    - For Windows user, you may want to follow the instructions at [here](https://github.com/yunpengn/CS2102/blob/master/psql_setup.md).
+- Run `setup_db.sql` in the `scripts` folder.
+
+- Visualization Tool<br>
+We recommend you to use [phpPgAdmin](http://phppgadmin.sourceforge.net/doku.php).
+
 ### Set-up of Database (using Microsoft SQL Server)
+
 - Overview<br>
 We need two tables in a single database. Below, assume that we have created the database called 'cs1101s'.<br>
 Therefore, you need to change the connection variables in config.php
