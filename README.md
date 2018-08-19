@@ -1,5 +1,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5aa02afb8707418cb0a219a08ea489cb)](https://www.codacy.com/app/yunpengn/CS1101S-DG-Website?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yunpengn/CS1101S-DG-Website&amp;utm_campaign=Badge_Grade)
 
+**Notice: This website will be _deprecated_ soon. Please use [modularize](https://github.com/yunpengn/modularize) instead.**
+
 # NUS CS1101S Discussion Group Website
 
 __[CS1101S Programming Methodology](https://comp.nus.edu.sg/~cs1101s/) (in JavaScript)<br>
