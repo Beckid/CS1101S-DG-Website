@@ -11,7 +11,7 @@ require_once 'nav.php';
 ?>
 <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 	<h2>
-		Welcome to CS1101S Discussion Group Website 2017!<br>
+		Welcome to CS1101S Studio Website 2018!<br>
 		<small>Brought to you by your Avenger Niu Yunpeng.</small>
 	</h2>
 </div>
