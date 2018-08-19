@@ -26,6 +26,11 @@ if (!logged_in()) {
 
 <?php
 } else {
+	function formatTime($date) {
+		$date = date_create($date);
+		date_timezone_set($date, timezone_open('Asia/Singapore'));
+		return date_format($date, 'H:m d M, Y');
+	}
 ?>
 <form method="post" action="download.php" name="download_form" id="download_form">
 	<input type="hidden" name="file_id" id="file_id" value="">

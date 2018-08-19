@@ -9,7 +9,7 @@
 require_once 'nav.php';
 
 // Set the default timezone to be Singapore local time.
-// Noitce this setting only applies to the current script.
+// Notice this setting only applies to the current script.
 date_default_timezone_set('Asia/Singapore');
 
 // Only admin user can use this tool.
