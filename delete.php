@@ -14,7 +14,7 @@ $result = -1;
 
 // Only admin users can delete files.
 if (!logged_in() || $_SESSION['usertype'] != "admin") {
-	header("location: index.php");
+	redirect_no_permission();
 } else if ($_POST) {
 	$checked = $_POST['select_file'];
 

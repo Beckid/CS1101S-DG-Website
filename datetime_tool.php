@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Singapore');
 
 // Only admin user can use this tool.
 if (!logged_in() || $_SESSION['usertype'] != "admin") {
-	header("location: login.php");
+	redirect_no_permission();
 }
 
 $db = db_connect();

@@ -14,8 +14,7 @@ $result = -1;
 
 // Only admin users can upload files.
 if (!logged_in() || $_SESSION['usertype'] != "admin") {
-	header("location: index.php");
-	die("No permission to access this page.");
+	redirect_no_permission();
 } else if ($_POST) {
 	// Handle all kinds of errors due to file upload.
 	if ($_FILES['file']['error'] > 0) {

@@ -436,4 +436,9 @@ function file_delete($id) {
 		return false;
 	}
 }
+
+function redirect_no_permission() {
+	header("location: index.php");
+	die("No permission to access this page.");
+}
 ?>

@@ -13,6 +13,12 @@ require_once 'config.php';
 // To load the required mailer functionality.
 require_once 'mailer.php';
 
+// Only admin users can upload files.
+if (!logged_in() || $_SESSION['usertype'] != "admin") {
+	header("location: index.php");
+	die("No permission to access this page.");
+}
+
 $result = email(ADMIN_EMAIL, "Test for mailer function", "Some test text");
 
 if ($result) {
