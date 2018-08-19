@@ -55,7 +55,7 @@ if (!logged_in()) {
 		<tr>
 			<td><?php echo $all_files[$i]['file_name']; ?></td>
 			<td><?php echo $all_files[$i]['author']; ?></td>
-			<td><?php echo $all_files[$i]['uploaded_at']; ?></td>
+			<td><?php echo formatTime($all_files[$i]['uploaded_at']); ?></td>
 			<td><?php echo $all_files[$i]['description']; ?></td>
 			<td><a href="javascript:void(0);" class="download_link" download="<?php echo $saveAsName; ?>" onclick="fill_download_form(<?php echo $all_files[$i]['id']; ?>);">Click here</a></td>
 		</tr>
