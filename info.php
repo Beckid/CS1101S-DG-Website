@@ -10,7 +10,7 @@ require_once 'useful.php';
 
 // Only admin user can use this tool.
 if (!logged_in() || $_SESSION['usertype'] != "admin") {
-	header("location: login.php");
+	redirect_no_permission();
 } else {
 	echo phpinfo();
 }
