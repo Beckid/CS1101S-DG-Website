@@ -221,9 +221,9 @@ function get_user_type($type_str) {
 
 // Send confirmation email to the desired email address.
 function create_user_email($email, $uname, $pword, $is_random) {
-	$subject = "User Registration Confirmation - CS1101S DG Website";
+	$subject = "User Registration Confirmation - CS1101S Studio Website";
 	$message = "Dear user,\n\n" .
-			   "Welcome to CS1101S DG Website!\n" .
+			   "Welcome to CS1101S Studio Website!\n" .
 			   "We notice that a new account associated with this email address has been created recently.\n" .
 			   "This email is to acknowledge you that the user registration is successful.\n\n" .
 			   "Username: " . $uname . "\n";
@@ -240,7 +240,6 @@ function create_user_email($email, $uname, $pword, $is_random) {
 			   "Sincere,\n" . 
 			   "Website Admin\n" .
 			   "Visit us at https://cs1101s.azurewebsites.net/";
-
 
 	if (email($email, $subject, $message)) {
 		return 0;
