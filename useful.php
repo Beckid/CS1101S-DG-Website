@@ -1,6 +1,6 @@
 <?php
 // To load the database configuration.
-require_once 'config.php';
+require_once 'config/config.php';
 // To load the required mailer functionality.
 require_once 'mailer.php';
 

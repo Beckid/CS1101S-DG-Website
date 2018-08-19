@@ -9,7 +9,7 @@
 	            <span class="icon-bar"></span>
 	        </button>
 
-			<a href="index.php" class="navbar-brand">CS1101S DG</a>
+			<a href="index.php" class="navbar-brand">CS1101S Studio</a>
 		</div>
 
 		<!-- Compatibility for mobile browsers, which will collapse on smaller screens -->
@@ -37,7 +37,6 @@
 						<li><a href="datetime_tool.php">Datetime Tool</a></li>
 						<li><a href="mailer_test.php">Mailer Test Tool</a></li>
 						<li><a href="info.php">PHPinfo()</a></li>
-						<li><a href="https://source-ide.surge.sh/" target="_blank">Source IDE (old)</a></li>
 					</ul>
 				</li>
 				<?php

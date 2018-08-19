@@ -5,7 +5,7 @@
 # NUS CS1101S Discussion Group Website
 
 __[CS1101S Programming Methodology](https://comp.nus.edu.sg/~cs1101s/) (in JavaScript)<br>
-AY2017/2018 Semester 1<br>
+AY2018/2019 Semester 1<br>
 [School of Computing](https://comp.nus.edu.sg/)<br>
 [National University of Singapore](https://www.nus.edu.sg/)__
 

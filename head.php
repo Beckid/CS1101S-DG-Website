@@ -1,5 +1,5 @@
 	<?php require_once 'theme.php'; ?>
-	<title>CS1101S Discussion Group Website 2017</title>
+	<title>CS1101S Studio Website 2018</title>
 
 	<!-- Character setting, icon setting and mobile compatibility -->
 	<meta charset="utf-8">
@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="favicon.ico" >
 
 	<!-- Information for search engine -->
-	<meta name="description" content="CS1101S Discussion Group Website 2017"/>
+	<meta name="description" content="CS1101S Studio Website 2018"/>
 	<meta name="keywords" content="Niu,Yunpeng,NUS,SoC,SOC,CS,CS1101S,JavaScript,Teaching">
 	<meta name="author" content="Niu Yunpeng">
 
