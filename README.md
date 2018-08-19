@@ -27,7 +27,7 @@ More and more web frameworks have been developed nowadays. But, why don't we jus
 
 ## How to Use
 - Notice that in the latest release, we have switched from mySQLi to PDO (PHP Database Object). That means we have adapted to the OOP style rather than procedural style. Also, this provides a unified interface in case that users may be using different database, like mySQL, PostGreSQL, etc.
-- In the future, there are two important updates: 1) Update from PHP 5.6 to PHP 7; 2) Fully adapt OOP style programming.
+- In the future, we may want to fully adapt OOP style programming by using [PHP-MVC](https://github.com/yunpengn/PHP-MVC).
 
 ### Set-up of Database (using mySQL)
 - Overview<br>
