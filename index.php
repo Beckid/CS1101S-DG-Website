@@ -29,7 +29,7 @@ if (!logged_in()) {
 	function formatTime($date) {
 		$date = date_create($date, timezone_open('Etc/Greenwich'));
 		date_timezone_set($date, timezone_open('Asia/Singapore'));
-		return date_format($date, 'H:m d M, Y');
+		return date_format($date, 'H:i d M, Y');
 	}
 ?>
 <form method="post" action="download.php" name="download_form" id="download_form">
