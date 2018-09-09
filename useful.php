@@ -395,8 +395,9 @@ function file_delete($id) {
 
 	// Notice that there is a known bug that LIMIT and OFFSET only accepts integer parameter.
 	// What we can do is to turn off emulated prepared statement.
-	// Please comment this line if you are using Microsoft SQL Server.
-	// $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+	if (DB_TYPE == "sqlsrv") {
+		$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+	}
 	
 	// Prepared statement for query to the database later (to avoid SQL injection attack).
 	$stmt = $db->prepare("SELECT * FROM " . DB_PREFIX . ".files ORDER BY id OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY");
